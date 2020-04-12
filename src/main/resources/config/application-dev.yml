@@ -1,0 +1,35 @@
+server:
+  port: 8080
+#  context-path: /api
+logging:
+  level:
+    root: info
+    com.lrm: debug
+  file: logs/debug.log
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+#注意:
+#在application-dev中ddl-auto的設定值
+#如果是create 他會刪除現有的表及其內容再重新創立一個新的
+#如果是update 他會創立一個表若有改動 以更新的方式更新不會刪除資料庫中的數據 
+
+
+
+
+
+
+
+
+
+
+
+
