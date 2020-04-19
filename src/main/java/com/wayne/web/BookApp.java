@@ -3,6 +3,12 @@ package com.wayne.web;
 import com.wayne.domain.Book;
 import com.wayne.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,8 +28,9 @@ public class BookApp {
      * @return
      */
     @GetMapping("/books")
-    public List<Book> getAll() {
-        return bookService.findAll();
+    public Page<Book> getAll(@PageableDefault(size = 5,sort = {"id"},direction = Sort.Direction.DESC) Pageable pageable) {
+
+    	return bookService.findAllByPage(pageable);
     }
 
     /**

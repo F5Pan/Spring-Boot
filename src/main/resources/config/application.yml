@@ -4,7 +4,9 @@ spring:
     active: dev
   thymeleaf:
     mode: HTML
-
+  devtools:
+    restart:
+      trigger-file: .trigger
 
 
 book:
