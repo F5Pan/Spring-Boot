@@ -4,12 +4,12 @@ server:
 logging:
   level:
     root: info
-    com.lrm: debug
+    com.wayne: debug
   file: logs/debug.log
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf-8
+    url: jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
     username: root
     password: root
   jpa:
